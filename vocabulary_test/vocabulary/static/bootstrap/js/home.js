@@ -1,9 +1,11 @@
-var problem ;
+var problem ;   
 var answer ;
 var word_id ;
 var correct_bar, wrong_bar, answer_bar;
 var prob_node ;
 var next_state = { change:false } ;
+var problem_set = require('database/problem_set.json')
+
 
 var headers = new Headers();
 headers.append('X-CSRFToken', getCookie('csrftoken'));
@@ -93,6 +95,8 @@ function ChangeQuestion() {
 	document.querySelector("#next").style.background="" ;
 	document.querySelector("#input_answer").value = "" ;
 	$("#input_answer").focus();
+
+  console.log(problem_set) ;
 
 /* fetch to get new problem and answer and wor_id */
 	var new_request = new Request('new/', {
