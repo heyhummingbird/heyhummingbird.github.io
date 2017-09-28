@@ -50,13 +50,10 @@
                     prob = word.fields.prob ;
                     ans = word.fields.ans ;
 
-/*                    var node = "<li id=index><p>{{ word.prob }}: {{ word.ans }} 
-                <span style="float: right;">
-                    <a class="close" href="javascript:Delete({{ word.id }});" style="margin-top: 8px;">×</a>
-                </span></p>
-            </li>"
-                    vocabulary_list.appendChild(node) ;*/
-                    
+                    var node = '<li><p>' + prob + ': ' + ans + '<span style="float: right;"><a class="close");" style="margin-top: 8px;">×</a></span></p></li>';
+                    vocabulary_list.innerHTML += node ;
+
+                    /*                    
                     var li_node = document.createElement("li") ;
                     var p_node = document.createElement("p") ;
                     p_node.text = prob + ": " + ans ;
@@ -64,31 +61,11 @@
                     p_node.appendChild(text_node) ;
                     li_node.appendChild(p_node) ;
                     vocabulary_list.appendChild(li_node) ;
+                    */
+
                 }
             }) ;
-/*
-            <li id=index><p>{{ word.prob }}: {{ word.ans }} 
-                <span style="float: right;">
-                    <a class="close" href="javascript:Delete({{ word.id }});" style="margin-top: 8px;">×</a>
-                </span></p>
-            </li>
-*/ 
-            function Delete(index) {
-                console.log(word_id) ;
-                var word = document.getElementById(index) ;
-                word.parentNode.removeChild(word) ;
-/*                fetch('/data/', {
-                    method: 'delete', 
-                    body: JSON.stringify({'word_id': word_id}),
-                    headers: headers,
-                    credentials: 'include'
-                }).then(function(res) {
-                    if (!res.ok) {
-                        alert("error!") ;
-                    }
-                })
-*/
-            }
+
         </script>
     </body>
 </html>

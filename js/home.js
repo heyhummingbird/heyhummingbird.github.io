@@ -1,20 +1,9 @@
 var problem ;   
 var answer ;
-var word_id ;
 var correct_bar, wrong_bar, answer_bar;
 var prob_node ;
 var next_state = { change:false } ;
 var rand ;   // random number generated to get new question
-
-var headers = new Headers();
-headers.append('X-CSRFToken', getCookie('csrftoken'));
-headers.append('Accept', "application/json");
-headers.append('Content-Type', "application/json");
-function getCookie(name) {
-    var value = "; " + document.cookie;
-    var parts = value.split("; " + name + "=");
-    if (parts.length == 2) return parts.pop().split(";").shift();
-}
 
 $(function () {
 	document.body.style.setProperty("--button-green", "rgb(177,216,161)") ;
@@ -25,7 +14,7 @@ $(function () {
 	answer_bar = $("#answer_bar") ;
 	prob_node = document.querySelector("#prob") ;
   
-  console.log(problem_set) ;
+//  	console.log(problem_set) ;
 
 	ChangeQuestion() ;
 	
@@ -86,12 +75,10 @@ function ChangeQuestion() {
 	document.querySelector("#input_answer").value = "" ;
 	$("#input_answer").focus();
   
-  rand = Math.floor(Math.random() * problem_set.length) ;
-  problem = problem_set[rand].fields.prob ;
-  answer = problem_set[rand].fields.ans ;
-  prob_node.innerHTML = problem ;
-  console.log(problem) ;
-  console.log(answer) ;
-
-	return ;
+	rand = Math.floor(Math.random() * problem_set.length) ;
+	problem = problem_set[rand].fields.prob ;
+	answer = problem_set[rand].fields.ans ;
+	prob_node.innerHTML = problem ;
+	console.log(problem) ;
+	console.log(answer) ;
 }
