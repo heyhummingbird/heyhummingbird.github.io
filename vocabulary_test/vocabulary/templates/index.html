@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Vocabulary Test</title>
+        <!-- Bootstrap -->
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/bootstrap/css/base.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Quattrocento+Sans|Forum|Lora" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/static/bootstrap/js/home.js"></script>
+    </head>
+    <body>
+        <div class="page-header">
+            <h1>Vocabulary Test</h1>
+        </div>
+        <div class="container">
+            <ul class="nav nav-pills navbar-right">
+                <li class="active"><a href="#">Test</a></li>
+                <li><a href="/show">Problem Set</a></li>
+                <li><a href="/add">Add More</a></li>       
+            </ul>
+        </div>
+        <br>
+        <div class="jumbotron text-center">
+          <h2 id="prob"></h1>
+          <form class="form-inline" onsubmit="SubmitAnswerByEnter(event); return false;">
+          <label for="input_answer">答案：</label>
+            <input name="answer" 
+                   id="input_answer" 
+                   placeholder="輸入中文"
+                   type="text"
+                   class="form-control input-lg" 
+                   autocomplete="off"
+                   ></input>
+          </form>
+          <br>
+          <button class="btn btn-lg" id="show_answer">Show answer</button>
+          <button class="btn btn-lg" id="next">Next</button>
+        </div>
+        <div class="container">
+          <div class="alert alert-success alert-dismissable" 
+               id="correct_bar" style="display:none">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            You got it right !
+          </div>
+          <div class="alert alert-danger alert-dismissable" 
+               id="wrong_bar" style="display:none">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            Wrong !
+          </div>
+          <div class="alert alert-warning alert-dismissable" 
+               id="answer_bar" style="display:none">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+          </div>
+        </div>
+
+    </body>
+</html>

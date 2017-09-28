@@ -1,0 +1,74 @@
+:root {
+    --button-green: rgb(177,216,161) ;
+    --button-red: #eca5a5 ;
+}
+
+#id_list_table {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px 5px 5px 5px
+}
+
+body {
+    font: 22px 'Crimson Text', 'Quattrocento Sans', 'Helvetica Neue', '微軟正黑體' ;
+    position: relative ;
+    z-index: 1 ;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Bellefair','Josefin Sans', sans-serif, cursive ;
+    font-weight: 300 ;
+    text-align: center ;
+}
+
+.alert {
+    font-family: 'Bellefair','Josefin Sans', sans-serif, cursive ;
+}
+
+.jumbotron>ol {
+    padding-left: 25% ;
+    padding-right: 25% ;
+}
+
+.page-header * {
+    font-family: 'Josefin Sans' ;
+    font-size: 2em ;
+    color: #009494 ;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: white ;
+    background-color: rgba(173, 218, 218, 0.8) ;
+}
+
+.nav-pills>li>a {
+    background-color: rgba(230, 230, 230, 0.3) ;
+}
+
+.nav-pills a {
+    color: #009494 ;
+    font: initial ;
+}
+
+.jumbotron {
+    padding: 24px 0 ;
+}
+
+li {
+    line-height: 180% ;
+}
+
+
+.btn {
+    background-color: silver ;
+    /* 177 216 161*/
+}
+
+.delete {
+    text-decoration: line-through ;
+    color: darkgray ;
+}
+
+.spotify {
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px
+}
