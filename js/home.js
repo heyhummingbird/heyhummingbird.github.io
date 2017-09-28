@@ -4,7 +4,6 @@ var word_id ;
 var correct_bar, wrong_bar, answer_bar;
 var prob_node ;
 var next_state = { change:false } ;
-var problem_set = require('database/problem_set.json')
 
 
 var headers = new Headers();
