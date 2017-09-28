@@ -98,27 +98,5 @@ function ChangeQuestion() {
 
   console.log(problem_set) ;
 
-/* fetch to get new problem and answer and wor_id */
-	var new_request = new Request('new/', {
-		method: "get"
-	})
-	fetch(new_request).then(function(res) {
-//		console.log(res) ;
-		if (res.ok) {
-			res.json().then(function(data) {
-				problem = data.prob ;
-				answer = data.ans ;
-				word_id = data.word_id ;
-//				console.log(problem) ;
-//				console.log(answer) ;
-				prob.innerHTML = problem ;
-			}) ;
-		}
-		else {
-			console.log("Response error when changing question.")
-		}
-	}).catch(function(err) {
-		alert("Error!") ;
-	})
 	return ;
 }
