@@ -47,15 +47,25 @@
                 var word, prob, ans ;
                 for (var index in problem_set) {
                     word = problem_set[index] ;
-                    prob = word.fields.pro ;
+                    prob = word.fields.prob ;
                     ans = word.fields.ans ;
-                    var node = document.createElement("li") ;
-                    var textnode = document.createTextNode(prob + ": " + ans) ;
-                    node.appendChild(textnode) ;
-                    vocabulary_list.appendChild(node) ;
-                }
 
-            }
+/*                    var node = "<li id=index><p>{{ word.prob }}: {{ word.ans }} 
+                <span style="float: right;">
+                    <a class="close" href="javascript:Delete({{ word.id }});" style="margin-top: 8px;">×</a>
+                </span></p>
+            </li>"
+                    vocabulary_list.appendChild(node) ;*/
+                    
+                    var li_node = document.createElement("li") ;
+                    var p_node = document.createElement("p") ;
+                    p_node.text = prob + ": " + ans ;
+                    var text_node = document.createTextNode(prob + ": " + ans) ;
+                    p_node.appendChild(text_node) ;
+                    li_node.appendChild(p_node) ;
+                    vocabulary_list.appendChild(li_node) ;
+                }
+            }) ;
 /*
             <li id=index><p>{{ word.prob }}: {{ word.ans }} 
                 <span style="float: right;">
