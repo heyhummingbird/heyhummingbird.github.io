@@ -91,7 +91,7 @@ function ChangeQuestion() {
   answer = problem_set[rand].fields.ans ;
   prob_node.innerHTML = problem ;
   console.log(problem) ;
-  console.log(problem) ;
+  console.log(ans) ;
 
 	return ;
 }
