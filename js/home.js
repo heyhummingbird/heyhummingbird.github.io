@@ -4,7 +4,7 @@ var word_id ;
 var correct_bar, wrong_bar, answer_bar;
 var prob_node ;
 var next_state = { change:false } ;
-
+var rand ;   // random number generated to get new question
 
 var headers = new Headers();
 headers.append('X-CSRFToken', getCookie('csrftoken'));
@@ -24,6 +24,8 @@ $(function () {
 	wrong_bar = $("#wrong_bar") ;
 	answer_bar = $("#answer_bar") ;
 	prob_node = document.querySelector("#prob") ;
+  
+  console.log(problem_set) ;
 
 	ChangeQuestion() ;
 	
@@ -46,17 +48,6 @@ function SubmitAnswer(usr_ans) {
 	if (usr_ans === answer) {
 		correct_bar.show() ;
 		document.querySelector("#next").style.background="var(--button-green)" ;
-		fetch('', {
-			method: 'post', 
-			body: JSON.stringify({'word_id': word_id}),
-			headers: headers,
-			credentials: 'include'
-		}).then(function(res) {
-			if (!res.ok) 
-				alert('increase correct times error!')
-		}).catch(function(err) {
-			alert("Error!") ;
-		})
 //		console.log("correct") ;
 	}
 	else {
@@ -94,8 +85,13 @@ function ChangeQuestion() {
 	document.querySelector("#next").style.background="" ;
 	document.querySelector("#input_answer").value = "" ;
 	$("#input_answer").focus();
-
-  console.log(problem_set) ;
+  
+  rand = Math.floor(Math.random() * problem_set.length) ;
+  problem = problem_set[rand].fields.prob ;
+  answer = problem_set[rand].fields.ans ;
+  prob_node.innerHTML = problem ;
+  console.log(problem) ;
+  console.log(problem) ;
 
 	return ;
 }
